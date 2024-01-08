@@ -10,7 +10,23 @@
 
 /*
  * Matrix transformations perform in row-major.
- * Converting between row-major and column-major is transposing the matrix.
+ * Converting between row-major and column-major is taking transpose of matrix.
+ *
+ * Row-major:
+ * |-------------|---|  |-----------|---|
+ * |             | 0 |  |           | 0 |
+ * |   Rotation  | 0 |  |   (3x3)   | 0 |
+ * |             | 0 |  |           | 0 |
+ * |-------------|---|  |-----------|---|
+ * | Translation | 1 |  |   (1x3)   | 1 |
+ * |-------------|---|  |-----------|---|
+ *
+ * Column-major:
+ * |-------------|-------------|    |-----------|-------|
+ * |   Rotation  | Translation |    |   (3x3)   | (3x1) |
+ * |-------------|-------------|    |-----------|-------|
+ * |   0  0  0   |      1      |    |  0  0  0  |   1   |
+ * |-------------|-------------|    |-----------|-------|
  */
 
 namespace SPTH {
